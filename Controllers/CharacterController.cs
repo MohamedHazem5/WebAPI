@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Services.CharacterService;
@@ -20,7 +21,7 @@ namespace WebAPI.Controllers
 
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceRespone<List<GetCharacterResponseDto>>>> Get()
-        {    
+        {   
             return Ok( await _characterService.GetAllCharacters());
         }
 
